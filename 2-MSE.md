@@ -35,6 +35,19 @@ print(as.matrix(out$which)[best.model,])
 8. nox
 
 Из набора данных исчез so2, зато добавились переменные jant, hc, nox
+Также тут мы можем посмотреть оптимальные переменные для каждого числа переменных (от 1 до 8)
+```{r}
+Selection Algorithm: exhaustive
+         prec jant jult ovr65 popn educ hous dens nonw wwdrk poor hc  nox so2 humid
+1  ( 1 ) " "  " "  " "  " "   " "  " "  " "  " "  "*"  " "   " "  " " " " " " " "  
+2  ( 1 ) " "  " "  " "  " "   " "  "*"  " "  " "  "*"  " "   " "  " " " " " " " "  
+3  ( 1 ) " "  "*"  " "  " "   " "  "*"  " "  " "  "*"  " "   " "  " " " " " " " "  
+4  ( 1 ) " "  "*"  " "  " "   " "  "*"  " "  "*"  "*"  " "   " "  " " " " " " " "  
+5  ( 1 ) "*"  "*"  " "  " "   " "  "*"  " "  "*"  "*"  " "   " "  " " " " " " " "  
+6  ( 1 ) "*"  "*"  " "  " "   " "  "*"  " "  "*"  "*"  " "   " "  " " " " "*" " "  
+7  ( 1 ) "*"  "*"  " "  " "   " "  "*"  " "  "*"  "*"  " "   " "  "*" "*" " " " "  
+8  ( 1 ) "*"  "*"  "*"  " "   " "  "*"  " "  "*"  "*"  " "   " "  "*" "*" " " " " 
+```
 Так какое же количество переменных оптимально для модели? 
 Мы можем узнать это, посмотрев на следующие графики
 ```{r}
@@ -49,10 +62,6 @@ plot(reg.summary$rss, xlab="Number of Variables", ylab="Resid. Sum of Squares", 
 best.rss <- which.min(reg.summary$rss)
 points(best.rss, reg.summary$rss[best.rss], col="red", cex=2,pch=20)
 
-# RSS
-plot(reg.summary$rss, xlab="Number of Variables", ylab="Resid. Sum of Squares", type="l")
-best.rss <- which.min(reg.summary$rss)
-points(best.rss, reg.summary$rss[best.rss], col="red", cex=2,pch=20)
 
 # AdjR2
 plot(reg.summary$adjr2, xlab="Number of Variables", ylab="Adjusted R2", type="l")
@@ -72,6 +81,14 @@ points(best.bic, reg.summary$bic[best.bic], col="red", cex=2,pch=20)
 
 ```
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/plots.png)
+
+Подробнее про метрики можно прочитать тут:
+[Residual sum of squares](http://www.machinelearning.ru/wiki/index.php?title=Остаточная_сумма_квадратов)
+[Adjusted R^2](http://www.machinelearning.ru/wiki/index.php?title=Коэффициент_детерминации)
+[Mallow CP](https://en.wikipedia.org/wiki/Mallows%27s_Cp)
+[Bayesian information criterion](http://www.machinelearning.ru/wiki/index.php?title=Байесовский_информационный_критерий)
+
+
 ```
 ```{r}
 ```
