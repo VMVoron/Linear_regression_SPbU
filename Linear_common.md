@@ -15,7 +15,7 @@ corrplot(corr)
 Как видим, переменные HC ~ NOX коррелируют друг с другом очень сильно
 Также можно отметить такие переменные, как: nonw ~ poor, educ ~ wwdrk, nonw ~ mortality
 
-Итак, мы будем объяснять уровень смертности через следующие ожидаемые переменные: 
+Итак, вероятно, следующие ожидаемые переменные больше всего влияют на уровень смертности: 
 > annual_precipitation (prec), \
 > popn(the number of members per household) \
 > the size of the nonwhite population (nonw) \
