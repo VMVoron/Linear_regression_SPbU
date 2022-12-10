@@ -16,7 +16,8 @@ corrplot(corr)
 Также можно отметить такие переменные, как: nonw ~ poor, educ ~ wwdrk, nonw ~ mortality
 
 Итак, мы будем объяснять уровень смертности через следующие ожидаемые переменные: 
-> annual_precipitation (prec), popn(the number of members per household) \
+> annual_precipitation (prec), \
+> popn(the number of members per household) \
 > the size of the nonwhite population (nonw) \
 > the number of families with an income less than $3000; (poor) \ 
 > и отдельно загрязнения (hc, noc, so2) 
