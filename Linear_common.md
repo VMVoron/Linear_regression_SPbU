@@ -9,7 +9,7 @@ data <- read.table('mortality.txt',
 library(corrplot)
 corr<-cor(data)
 corrplot(corr)
-``
+```
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot.png)
 
 Как видим, переменные HC ~ NOX коррелируют друг с другом очень сильно
