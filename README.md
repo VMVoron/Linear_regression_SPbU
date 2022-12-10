@@ -30,7 +30,7 @@
       B =  A1 *  X1 +  A2 *  X2 +  A3 *  X3 +  A4 *  X4 +  A5 *  X5
         +  A6 *  X6 +  A7 *  X7 +  A8 *  X8 +  A9 *  X9 + A10 * X10
        + A11 * X11 + A12 * X12 + A13 * X13 + A14 * X14 + A15 * X15
-       
+##[Часть 0. Модель парной регрессии (простой датасет, 2 columns)](https://github.com/VMVoron/RStudio/blob/main/LM.md)   
 ## [Часть 1. Overview датасета и ручной выбор переменных](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/1-Linear_overview.md) 
 ## [Часть 2. Fit модели методом MSE](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/2-MSE.md)
      
