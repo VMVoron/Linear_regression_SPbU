@@ -5,25 +5,25 @@
 
 ##    The death rate is to be represented as a function of other variables.
 
-###    There are 60 rows of data.  The data includes:
+###    There are 60 rows of data.  The data includes (расшифровка переменных):
 
       I,   the index;  
-      A1,  the average annual precipitation; *** prec *** 
-      A2,  the average January temperature; ***jant*** 
-      A3,  the average July temperature; jult 
-      A4,  the size of the population older than 65; ovr65
-      A5,  the number of members per household;  popn 
-      A6,  the number of years of schooling for persons over 22; educ 
-      A7,  the number of households with fully equipped kitchens; hous 
-      A8,  the population per square mile; dens
-      A9,  the size of the nonwhite population;  nonw
-      A10, the number of office workers;  wwdrk 
-      A11, the number of families with an income less than $3000; poor 
-      A12, the hydrocarbon pollution index; hc 
-      A13, the nitric oxide pollution index; nox 
-      A14, the sulfur dioxide pollution index; so2 
-      A15, the degree of atmospheric moisture. humid 
-      B,   the death rate. mort
+      A1,  the average annual precipitation; - prec
+      A2,  the average January temperature;  - jant
+      A3,  the average July temperature; -  jult 
+      A4,  the size of the population older than 65;  - ovr65
+      A5,  the number of members per household;  - popn 
+      A6,  the number of years of schooling for persons over 22; - educ 
+      A7,  the number of households with fully equipped kitchens; - hous 
+      A8,  the population per square mile; - dens
+      A9,  the size of the nonwhite population;  - nonw
+      A10, the number of office workers; -  wwdrk 
+      A11, the number of families with an income less than $3000; - poor 
+      A12, the hydrocarbon pollution index;-  hc 
+      A13, the nitric oxide pollution index; - nox 
+      A14, the sulfur dioxide pollution index;-  so2 
+      A15, the degree of atmospheric moisture.-  humid 
+      B,   the death rate.-  mort
 
 ##    We seek a model of the form:
 
