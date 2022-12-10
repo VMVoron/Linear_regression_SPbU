@@ -1,5 +1,5 @@
 # Linear_regression_SPbU - Линейные регрессии в рамках учебного курса
-###  x28.txt
+### [Данные для скачивания](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/mortality.txt)
 
 ##  Discussion:
 
