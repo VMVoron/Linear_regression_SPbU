@@ -8,7 +8,7 @@
 ###    There are 60 rows of data.  The data includes:
 
       I,   the index;  
-      A1,  the average annual precipitation; ***prec*** 
+      A1,  the average annual precipitation; *** prec *** 
       A2,  the average January temperature; ***jant*** 
       A3,  the average July temperature; jult 
       A4,  the size of the population older than 65; ovr65
