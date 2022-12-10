@@ -35,6 +35,28 @@ print(as.matrix(out$which)[best.model,])
 8. nox
 
 Из набора данных исчез so2, зато добавились переменные jant, hc, nox
+
+Посмотрим на коэффициенты нашей модели
+```{r}
+best.cp_model <- which.min(reg.summary$cp)
+coef(reg, best.cp_model)
+```
+```{r}
+(Intercept)          prec          jant          jult          educ          dens          nonw            hc           nox 
+ 1.181381e+03  1.334171e+00 -1.438639e+00 -2.197716e+00 -1.564402e+01  8.837313e-03  4.594440e+00 -7.740279e-01  1.568656e+00 
+```
+Получили уравнение вида: 
+```{r}
+mort = 1.181381e+03 + 1.334171e+00 * prec - -1.438639e+00 * jant -2.197716e+00 *  jult + 8.837313e-03 * dens + 4.594440e+00 * nonw - -7.740279e-01 * hc + 1.568656e+00  * nox
+```
+
+```{r}
+features <- data[,-c(16)]
+reg <- regsubsets(features, data$mort)
+reg.summary <- summary(reg)
+summary(as.matrix(out$which)[best.model,])
+```
+
 Также тут мы можем посмотреть оптимальные переменные для каждого числа переменных (от 1 до 8)
 ```{r}
 Selection Algorithm: exhaustive
@@ -51,12 +73,7 @@ Selection Algorithm: exhaustive
 Так какое же количество переменных оптимально для модели? 
 Мы можем узнать это, посмотрев на следующие графики
 ```{r}
-features <- data[,-c(16)]
-reg <- regsubsets(features, data$mort)
-reg.summary <- summary(reg)
-summary(as.matrix(out$which)[best.model,])
 par(mfrow=c(2,2))
-
 # RSS
 plot(reg.summary$rss, xlab="Number of Variables", ylab="Resid. Sum of Squares", type="l")
 best.rss <- which.min(reg.summary$rss)
@@ -90,25 +107,12 @@ points(best.bic, reg.summary$bic[best.bic], col="red", cex=2,pch=20)
 
 Для улучшения интерпретации модели, остановимся на 6 переменных, чем их меньше  - тем проще интерпретировать
 
-nonw
-educ
-prec
-so2
-jant вместо jult
-dens
+1. nonw
+2. educ
+3. prec
+4. so2
+5. jant вместо jult
+6. dens
 
-Как мы видим, в ручном отборе я ошиблась только в одной переменной: видимо, у jant корреляция с остальнымии переменными меньше
+Как мы видим, в ручном отборе я ошиблась только в одной переменной: видимо, у jant корреляция с остальнымии переменными меньше. Это показывает, что и ручной отбор может иметь неплохой результат 
 
-Посмотрим на коэффициенты нашей модели
-```{r}
-best.cp_model <- which.min(reg.summary$cp)
-coef(reg, best.cp_model)
-```
-```{r}
-(Intercept)          prec          jant          jult          educ          dens          nonw            hc           nox 
- 1.181381e+03  1.334171e+00 -1.438639e+00 -2.197716e+00 -1.564402e+01  8.837313e-03  4.594440e+00 -7.740279e-01  1.568656e+00 
-```
-Получили уравнение вида: 
-```{r}
-mort = 1.181381e+03 + 1.334171e+00 * prec - -1.438639e+00 * jant -2.197716e+00 *  jult + 8.837313e-03 * dens + 4.594440e+00 * nonw - -7.740279e-01 * hc + 1.568656e+00  * nox
-```
