@@ -31,7 +31,7 @@
         +  A6 *  X6 +  A7 *  X7 +  A8 *  X8 +  A9 *  X9 + A10 * X10
        + A11 * X11 + A12 * X12 + A13 * X13 + A14 * X14 + A15 * X15
        
-  
+## [Часть 0. Некоторые элементы теории](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/0%20-%20Theory.md)
 ## [Часть 1. Overview датасета и ручной выбор переменных](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/1-Linear_overview.md) 
 ## [Часть 2. Fit модели методом MSE](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/2-MSE.md)
 ## [Часть 4. Парная линейная регрессия](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/4-pair_regressions.md)
