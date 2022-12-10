@@ -82,11 +82,11 @@ points(best.bic, reg.summary$bic[best.bic], col="red", cex=2,pch=20)
 ```
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/plots.png)
 
-Подробнее про метрики можно прочитать тут:
-[Residual sum of squares](http://www.machinelearning.ru/wiki/index.php?title=Остаточная_сумма_квадратов)
-[Adjusted R^2](http://www.machinelearning.ru/wiki/index.php?title=Коэффициент_детерминации)
-[Mallow CP](https://en.wikipedia.org/wiki/Mallows%27s_Cp)
-[Bayesian information criterion](http://www.machinelearning.ru/wiki/index.php?title=Байесовский_информационный_критерий)
+Подробнее про метрики можно прочитать тут: 
+> [Residual sum of squares](http://www.machinelearning.ru/wiki/index.php?title=Остаточная_сумма_квадратов)
+> [Adjusted R^2](http://www.machinelearning.ru/wiki/index.php?title=Коэффициент_детерминации)
+> [Mallow CP](https://en.wikipedia.org/wiki/Mallows%27s_Cp)
+> [Bayesian information criterion](http://www.machinelearning.ru/wiki/index.php?title=Байесовский_информационный_критерий)
 
 
 ```
