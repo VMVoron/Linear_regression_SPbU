@@ -88,6 +88,17 @@ points(best.bic, reg.summary$bic[best.bic], col="red", cex=2,pch=20)
 > [Mallow CP](https://en.wikipedia.org/wiki/Mallows%27s_Cp) \
 > [Bayesian information criterion](http://www.machinelearning.ru/wiki/index.php?title=Байесовский_информационный_критерий)
 
+Для улучшения интерпретации модели, остановимся на 6 переменных, чем их меньше  - тем проще интерпретировать
+
+nonw
+educ
+prec
+so2
+jant вместо jult
+dens
+
+Как мы видим, в ручном отборе я ошиблась только в одной переменной: видимо, у jant корреляция с остальнымии переменными меньше
+
 Посмотрим на коэффициенты нашей модели
 ```{r}
 best.cp_model <- which.min(reg.summary$cp)
