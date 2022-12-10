@@ -88,9 +88,14 @@ points(best.bic, reg.summary$bic[best.bic], col="red", cex=2,pch=20)
 > [Mallow CP](https://en.wikipedia.org/wiki/Mallows%27s_Cp) \
 > [Bayesian information criterion](http://www.machinelearning.ru/wiki/index.php?title=Байесовский_информационный_критерий)
 
-
+Посмотрим на коэффициенты нашей модели
+```{r}
+best.cp_model <- which.min(reg.summary$cp)
+coef(reg, best.cp_model)
 ```
 ```{r}
+(Intercept)          prec          jant          jult          educ          dens          nonw            hc           nox 
+ 1.181381e+03  1.334171e+00 -1.438639e+00 -2.197716e+00 -1.564402e+01  8.837313e-03  4.594440e+00 -7.740279e-01  1.568656e+00 
 ```
-```{r}
-```
+Получили уравнение вида: 
+mort = 1.181381e+03 + 1.334171e+00 * prec - -1.438639e+00 * jant -2.197716e+00 *  jult + 8.837313e-03 * dens + 4.594440e+00 * nonw - -7.740279e-01 * hc + 1.568656e+00  * nox
