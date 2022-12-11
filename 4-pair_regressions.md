@@ -241,10 +241,10 @@ ggplot(df2, aes(pred, abs(resid)) +
   geom_point() +
   geom_smooth()
 ```
-Модель с овыбросами
+Модель с выбросами \
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
 
-Модель без выбросов
+Модель без выбросов \
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot08.png)
 ```{r}
 ```
