@@ -123,10 +123,13 @@ plot(hat_values, std_resid, cex = 10 * sqrt(cooks_D), xlab="hat-значения
 abline(h =c(a, b), lty = 2, col = "steelblue")
 
 ```
-![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/bubble_cook.png)
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8_%D1%81%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8.png)
 
-Похоже, что есть несколько наблюдений которые портят всю малину. \
-Будем их вычислять и мочить по сортирам, чтобы улучшить модель
+Похоже, что есть несколько наблюдений, которые портят всю малину. \
+Будем их вычислять и думать, есть ли смысл мочить их по сортирам, чтобы улучшить модель
+
+```{r}
+```
 
 ```{r}
 ```
