@@ -208,8 +208,43 @@ Multiple R-squared:  0.3492,	Adjusted R-squared:  0.3373
 F-statistic: 29.51 on 1 and 55 DF,  p-value: 1.304e-06
 ```
 И действительно, F статистика стала меньше, R^2 стал меньше, стандартная ошибка возросла \
-Остатки были сладки \
+Остатки были сладки 
 
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
+
+Вместе с тем, можно сказать, что модель стала оптимистичнее. Рассчитаем точечный прогноз для большого значения фактора. Например, nonw = 80 по нашим двум моделям: с выбросами и без
+```{r}
+nonw_given = 80
+mort_pred1 = 887.051909 + 4.489601 * nonw_given
+mort_pred2 = 892.8715 + 4.0815 * nonw_given
+mort_pred1 - 1246.22
+mort_pred2 - 1219.391
+```
+Теперь модель без выбросов интерпретативно мне нравится больше
+Для проверки на гетероскедастичность построим график "Абсолютное значение остатков против предсказанных значений"
+```{r}
+df1 <- data.frame(
+  resid = residuals(lm.model1),
+  pred = predict(lm.model1))
+
+df2 <- data.frame(
+  resid = residuals(lm.model2),
+  pred = predict(lm.model2))
+
+
+
+ggplot(df1, aes(pred, abs(resid))) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(df2, aes(pred, abs(resid)) + 
+  geom_point() +
+  geom_smooth()
+```
+Модель с овыбросами
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
+
+Модель без выбросов
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
 ```{r}
 ```
