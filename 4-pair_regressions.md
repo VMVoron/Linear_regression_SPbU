@@ -246,7 +246,30 @@ ggplot(df2, aes(pred, abs(resid)) +
 
 Модель без выбросов \
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot09.png)
+
+Ничего подозрительного замечено не было
+
 ```{r}
+library(lmtest)
+dwtest(lm.model1)
 ```
 ```{r}
+        Durbin-Watson test
+        
+data:  lm.model1
+DW = 1.5556, p-value = 0.0396
+alternative hypothesis: true autocorrelation is greater than 0
+```
+```{r}
+dwtest(lm.model2)
+
+       Durbin-Watson test
+       
+data:  lm.model2
+DW = 1.754, p-value = 0.1739
+alternative hypothesis: true autocorrelation is greater than 0
+```
+Поскольку это p-значение не нуль в обоих случаях,  мы можем отклонить нулевую гипотезу и сделать вывод, что остатки в этой регрессионной модели автокоррелированы.
+```
+
 ```
