@@ -167,6 +167,50 @@ gridExtra::grid.arrange(outliers_present, outliers_removed, ncol = 2)
 
 Смотря на график, кажется, что лучше не стало. Соберём модель снова, уже без выбросов и сопоставим данные.
 ```{r}
+lm.model2<-lm(formula = mort ~ nonw, data = data2)
+lm.model2$coefficients
+b0 <- lm.model1$coefficient[1]
+b1 <- lm.model1$coefficient[2]
+x1 <- min(data2$nonw)
+x2 <- max(data2$nonw)
+x <- seq(from = x1, to = x2, length.out =100)
+y <- b0 + b1*x
+plot(data2$nonw, data2$mort, main="Linear regression 1: Mortality rate and the size of the nonwhite population", xlab="Nonwhite population", ylab="Mortality", pch = 16, col = 'dimgray')
+grid()
+lines(x, y, col="orangered", lwd = 5)
+summary(aov(mort ~ nonw, data = data2))
+summary(lm.model2)
+```
+```{r}
+            Df Sum Sq Mean Sq F value  Pr(>F)    
+nonw         1  59901   59901   29.51 1.3e-06 ***
+Residuals   55 111647    2030                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = mort ~ nonw, data = data2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-99.719 -26.054  -5.158  34.133  90.310 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 892.8715    10.3476  86.288  < 2e-16 ***
+nonw          4.0815     0.7514   5.432  1.3e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 45.05 on 55 degrees of freedom
+Multiple R-squared:  0.3492,	Adjusted R-squared:  0.3373 
+F-statistic: 29.51 on 1 and 55 DF,  p-value: 1.304e-06
+```
+И действительно, F статистика стала меньше, R^2 стал меньше, стандартная ошибка возросла \
+Остатки были сладки
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
+```{r}
 ```
 ```{r}
 ```
