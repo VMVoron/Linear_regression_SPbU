@@ -34,6 +34,19 @@ lines(x, y, col="firebrick", lwd = 5)
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot06.png)
 
 Посмотрим результаты линейной аппроксимации: 
+
+```{r}
+summary(aov(lm.model1))
+```
+
+```{r}
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+nonw         1  94621   94621   41.05 2.88e-08 ***
+Residuals   58 133687    2305                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+```
+
 ```{r}
 summary(lm.model1)
 ```
