@@ -144,7 +144,29 @@ hist(residuals(lm.model1), xlab="Residuals", main="Частота остатко
 Будем их вычислять и думать, есть ли смысл мочить их по сортирам, чтобы улучшить модель
 
 ```{r}
-```
+outliers <- data$nonw
+#identify influential points
+influential_obs <- as.numeric(names(cooks_D)[(cooks_D > 4/(n-P-1))])
 
+#define new data frame with influential points removed
+outliers_removed <- outliers[-influential_obs]
+data2 <- data[data$nonw %in% c(outliers_removed), ]
+#удалили 3 выброса
+library(ggplot2)
+outliers_present <- ggplot(data, aes(x = data$nonw, y = data$mort)) + geom_point() +
+  geom_smooth(method = lm) + ggtitle("Outliers Present")
+                
+outliers_removed <- ggplot(data2, aes(x = data2$nonw, y = data2$mort)) + geom_point() +
+  geom_smooth(method = lm) + ggtitle("Outliers Removed")
+
+library(gridExtra)
+gridExtra::grid.arrange(outliers_present, outliers_removed, ncol = 2) 
+```
+Посмотрим, стало ли лучше без наших ~~отбросов~~ выбросов
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Vibrosy.png)
+
+Смотря на график, кажется, что лучше не стало. Соберём модель снова, уже без выбросов и сопоставим данные.
+```{r}
+```
 ```{r}
 ```
