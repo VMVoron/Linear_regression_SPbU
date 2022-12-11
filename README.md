@@ -35,7 +35,7 @@
 ## [Часть 1. Overview датасета и ручной выбор переменных](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/1-Linear_overview.md) 
 ## [Часть 2. Fit модели методом MSE](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/2-MSE.md)
 ## [Часть 3. Парная линейная регрессия](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/4-pair_regressions.md)
-## [Часть 3. Множественная линейная регрессия](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/4-MultipleLR.md)
+## [Часть 4. Множественная линейная регрессия](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/4-MultipleLR.md)
      
 > Reference:
 
