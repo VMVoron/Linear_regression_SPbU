@@ -116,11 +116,26 @@ n = 60
 P = 1
 a <- min(std_resid)+4/(n-P-1)
 b <- max(std_resid)-4/(n-P-1)
+library(stats)
+
 std_resid <- rstandard(lm.model1)
 cooks_D  <- cooks.distance(lm.model1)
 hat_values <- hatvalues(lm.model1)
-plot(hat_values, std_resid, cex = 10 * sqrt(cooks_D), xlab="hat-значения", ylab="Стандартизированные остатки", col = 'darkturquoise')
+
+par(mfrow=c(2,2))
+
+plot(hat_values, std_resid, cex = 10 * sqrt(cooks_D), xlab="hat-значения", ylab="Стандартизированные остатки", main='Пузырьковая диаграмма расстояний Кука', col = 'darkturquoise')
 abline(h =c(a, b), lty = 2, col = "steelblue")
+
+plot(cook, type="h",lwd=3,col="red", ylab="Cook's Distance", main='Дистанция Кука у наблюдений по индексу')
+
+abline(0,0,col="red")
+
+
+qqnorm(resid(lm.model1), main = "Нормальный Q-Q график", col = "darkgrey")
+qqline(resid(lm.model1), col = "dodgerblue", lwd = 2)
+
+hist(residuals(lm.model1), xlab="Residuals", main="Частота остатков по отклонению",nclass=30,col="orange")
 
 ```
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8_%D1%81%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8.png)
