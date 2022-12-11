@@ -3,7 +3,7 @@
 data <- read.table('mortality.txt',             
                    header = TRUE)
 ```
-Строим модель
+### Строим модель
 ```{r}
 lm.model1<-lm(formula = mort ~ nonw, data = data)
 ```
