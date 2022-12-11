@@ -245,7 +245,7 @@ ggplot(df2, aes(pred, abs(resid)) +
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
 
 Модель без выбросов
-![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
+![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot08.png)
 ```{r}
 ```
 ```{r}
