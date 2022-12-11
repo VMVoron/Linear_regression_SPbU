@@ -175,7 +175,7 @@ x1 <- min(data2$nonw)
 x2 <- max(data2$nonw)
 x <- seq(from = x1, to = x2, length.out =100)
 y <- b0 + b1*x
-plot(data2$nonw, data2$mort, main="Linear regression 1: Mortality rate and the size of the nonwhite population", xlab="Nonwhite population", ylab="Mortality", pch = 16, col = 'dimgray')
+plot(data2$nonw, data2$mort, main="LR 2: Mortality rate and the size of the nonwhite population (without outliers)", xlab="Nonwhite population", ylab="Mortality", pch = 16, col = 'dimgray')
 grid()
 lines(x, y, col="orangered", lwd = 5)
 summary(aov(mort ~ nonw, data = data2))
@@ -208,7 +208,8 @@ Multiple R-squared:  0.3492,	Adjusted R-squared:  0.3373
 F-statistic: 29.51 on 1 and 55 DF,  p-value: 1.304e-06
 ```
 И действительно, F статистика стала меньше, R^2 стал меньше, стандартная ошибка возросла \
-Остатки были сладки
+Остатки были сладки \
+
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/Rplot07.png)
 ```{r}
 ```
