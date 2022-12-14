@@ -3,6 +3,9 @@
 data <- read.table('mortality.txt',             
                    header = TRUE)
 ```
+Посмотрим на распределение величины
+[!png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/hist.jpg)
+Распределение колокообразное, не увеличенное по краям, работать можно
 ### Строим модель
 ```{r}
 lm.model1<-lm(formula = mort ~ nonw, data = data)
