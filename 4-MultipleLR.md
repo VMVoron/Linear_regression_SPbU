@@ -90,7 +90,7 @@ data2 <- data[data$nonw %in% c(outliers_removed), ]
 ```
 ![png](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8_%D0%BC%D0%BD.png)
 
-
+[картинка тут](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8_%D0%BC%D0%BD.png)
 
 Нашли пять выбросов и удалили их
 ```{r}
