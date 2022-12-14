@@ -180,5 +180,10 @@ cor(pred.m1, data2$mort[test.ids]) ^ 2
 print(pred.m1)
 55       56       57       58       60 
 940.7411 892.2187 933.6958 907.1636 953.2060 
+
+
+plot(pred.m1, data2$mort[test.ids])
+abline(0, 1)
 ```
+Построим график зависимости между предсказанными и наблюдаемыми значениями
 ![jpg](https://github.com/VMVoron/Linear_regression_SPbU/blob/main/pred.png.jpg)
